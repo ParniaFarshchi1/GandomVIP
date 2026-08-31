@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gandom VIP</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+
+     <div class="container" >
+
+      <div id="modal" class="modal" dir="rtl">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="جستجو..." autocomplete="off">  
+          <span></span>
+          <span> <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-search search-icon"
+                
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                />
+              </svg></span>
+            </div>
+            <div id="searchResults"></div>
+            <p id="close-btn">x</p>    
+      </div>
+      <!-- -------------------------log in----------------------------- -->
+      <div class="modal-login" id="login-user">
+        <div class="login-popup">
+         <div>
+             <p id="close-login">x</p>    
+          <p class="login-title">
+            Log in
+          </p>
+          <label for="username">Username</label>
+          <input id="username" type="text" placeholder="Enter your username...">
+          <label for="password">Password</label>
+          <input type="text" placeholder="Enter your password...">
+          <!-- <span id="wrongInfo">password or username is wrong please try again</span> -->
+          <button>LOG IN</button>
+          <div class="create-acc"><p>you don't have an accaunt?</p>
+            <a onclick="signin()">create an accaunt</a>
+          </div>
+         </div>
+        </div>
+      </div>
+      <!-- ----------------------------sign in-name-lastname------------------------------- -->
+      <div class="modal-login modal-signin" id="signin-user">
+        <div class="login-popup">
+          <div>
+            <p id="close-signin">x</p>    
+            <p class="login-title">
+              Sign in
+            </p>
+          <label for="Name">Name</label>
+          <input id="Name" type="text" placeholder="Enter your firstname...">
+          <label for="LastName">LastName</label>
+          <input id="lastName" type="text" placeholder="Enter your lastName...">
+          <div  onclick="nextBirth()" class="next-sign"><p>NEXT </p><i class="fa fa-angle-right" ></i></div>
+        </div>
+      </div>
+    </div>
+    <!-- ----------------------------sign in-next-birthday------------------------------- -->
+    <div class="modal-login modal-signin" id="next-sign-birthday">
+        <div class="login-popup">
+         <div>
+             <p id="close-next-birthday">x</p>    
+          <p class="login-title">
+            Sign in
+          </p>
+          
+          <label class="birth" for="birth" >Date of Birth</label>
+          <input id="birth" type="date">
+          <div  onclick="nextgender()" class="next-sign"><p>NEXT </p><i class="fa fa-angle-right" ></i></div>
+   
+
+</div>
+</div>
+</div>
+    <!-- ----------------------------sign in-next-gender------------------------------- -->
+    <div class="modal-login modal-signin" id="next-sign-gender">
+        <div class="login-popup">
+         <div>
+             <p id="close-next-gender">x</p>    
+          <p class="login-title">
+            Sign in
+          </p>
+
+          <label class="gender" >your Gender</label>
+          <select class="gender-select" name="" id="">
+            <option value="">female</option>
+            <option value="">male</option>
+            <option value="">none-binary</option>
+            <option value="">prefer not to say</option>
+          </select>
+ 
+          <div  onclick="nextemail()" class="next-sign"><p>NEXT </p><i class="fa fa-angle-right" ></i></div>
+   
+
+</div>
+</div>
+</div>
+
+    <!-- ----------------------------sign in-next-email------------------------------- -->
+    <div class="modal-login modal-signin" id="next-sign-email">
+        <div class="login-popup">
+         <div>
+             <p id="close-next-email">x</p>    
+          <p class="login-title">
+            Sign in
+          </p>
+          
+          <label class="birth">Email or number</label>
+          <input type="text" placeholder="enter your number or emeil">
+          <div  onclick="nextcode()" class="next-sign"><p>NEXT </p><i class="fa fa-angle-right" ></i></div>
+   
+
+</div>
+</div>
+</div>
+    <!-- ----------------------------sign in-next-code------------------------------- -->
+    <div class="modal-login modal-signin" id="next-sign-code">
+        <div class="login-popup">
+         <div>
+             <p id="close-next-code">x</p>    
+          <p class="login-title">
+            Sign in
+          </p>
+          
+          <label class="birth">Enter the Code</label>
+          <div class="code">
+
+            <input class="code-number" type="text" value="*">
+            <input class="code-number" type="text" value="*">
+            <input class="code-number" type="text" value="*">
+            <input class="code-number" type="text" value="*">
+            <input class="code-number" type="text" value="*">
+          </div>
+   
+          <div class="next-sign"><p>CREATE ACCAUNT </p></div>
+
+</div>
+</div>
+</div>
+<nav>
+        <div class="left">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-basket basket"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"
+            />
+          </svg>
+
+          <svg 
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-person-fill user"
+            viewBox="0 0 16 16"
+            id="user"
+           >
+            <path
+              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+            />
+          </svg>
+        </div>
+        <div class="middle">
+          <a href="">تماس با ما</a>
+          <a href="">وبلاگ</a>
+          <a href="">جام گل</a>
+          <a href="">دسته گل</a>
+          <a href="">گل نوزادی</a>
+          <a href="">
+            <div class="angel-down">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-down"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </div>
+            گل‌های مناسبتی
+          </a>
+          <a href="">
+            <div class="angel-down">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-down"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </div>
+            تاج گل
+          </a>
+          <a href="">
+            <div class="angel-down">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-down"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </div>
+            گل ترحیم
+          </a>
+          <a href="">
+            <div class="angel-down">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-down"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </div>
+            باکس گل
+          </a>
+          <a href="">گندم VIP</a>
+          <div class="search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-search search-icon"
+              id="search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="right">
+          <div class="logo">
+            <img src="images/logo-gandom-VIP50.webp" alt="" />
+          </div>
+        </div>
+      </nav>
+      <main>
+      <!-- -------------------------main sec1 , defult pic---------------------- -->
+        <section  id="sec1" class="section1">
+          <div class="gandom-pic">
+            <img src="images/default-mother-day1200-505.webp" alt="" />
+            <div class="gandom-pic-text">
+              <h1>GANDOM VIP</h1>
+              <span>The Art Of Luxury Flowers</span>
+              <div class="pic-btns">
+                <button>جدید ترین باکس ها</button>
+                <button>پشتیبانی فوری</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- -------------------------main sec2 , second models---------------------- -->
+        <section class="section2">
+          <div class="titr">
+            <div class="line"><hr /></div>
+            <h2>خرید آنلاین گل| گل فروشی آنلاین | خرید اینترنتی گل</h2>
+            <div class="line"><hr /></div>
+          </div>
+          <div class="models">
+            <div class="flower-model">
+              <div class="flower-model-img">
+                <img src="images/جام-گل-صفحه-هوم.webp" alt="" />
+              </div>
+              <div class="text">
+                <i class="fa fa-angle-left" aria-hidden="true"></i
+                  ><a href="">جام گل</a>
+                </div>
+              </div>
+              <div class="flower-model">
+                <div class="flower-model-img">
+                  <img src="images/تاج-گل-صفحه-هوم.webp" alt="" />
+                </div>
+                <div class="text">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i
+                    ><a href="">تاج گل</a>
+                  </div>
+                </div>
+                <div class="flower-model">
+                  <div class="flower-model-img">
+                    <img src="images/دسته-گل.webp" alt="" />
+                  </div>
+                  <div class="text">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i
+                      ><a href="">دسته گل</a>
+                    </div>
+                  </div>
+                  <div class="flower-model">
+                    <div class="flower-model-img">
+                      <img src="images/باکس-گل-1.webp" alt="" />
+                    </div>
+                    <div class="text">
+                      <i class="fa fa-angle-left" aria-hidden="true"></i
+                        ><a href="">باکس گل</a>
+                      </div>
+                    </div>
+                    <div class="flower-model">
+                      <div class="flower-model-img">
+                        <img src="images/جعبه-گل-طرح-قلب.webp" alt="" />
+                      </div>
+                      <div class="text">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i
+                          ><a href="">گل ولنتاین</a>
+                        </div>
+                      </div>
+                      <div class="flower-model">
+                        <div class="flower-model-img">
+                          <img src="images/باکس-گل-کد-627-اسلاید-سوم.webp" alt="" />
+                        </div>
+                        <div class="text">
+                          <i class="fa fa-angle-left" aria-hidden="true"></i
+                            ><a href="">گل ترحیم</a>
+                          </div>
+                        </div>
+                        <div class="flower-model">
+                          <div class="flower-model-img">
+                            <img src="images/باکس-گل-نوزادی.webp" alt="" />
+                          </div>
+                          <div class="text">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i
+                              ><a href="">گل نوزادی</a>
+                            </div>
+                          </div>
+                          <div class="flower-model">
+                            <div class="flower-model-img">
+                              <img src="images/گل-روز-دختر.webp" alt="" />
+                            </div>
+                            <div class="text">
+                              <i class="fa fa-angle-left" aria-hidden="true"></i
+                                ><a href="">گل مناسبتی</a>
+                              </div>
+                            </div>
+                          </div>
+        </section>
+        <!-- -------------------------main sec3 , second slider---------------------- -->
+        <section>
+          <div class="titr">
+            <button> مشاهده همه دسته گل<i class="fa fa-angle-right" aria-hidden="true"></i></button>
+            <h2>خرید دسته گل</h2>
+          </div>
+          <div class="contain-box">
+            <div class="prew" onclick="plusIndex(this,-1)">
+              <i class="fa fa-angle-left" ></i>
+            </div>
+            <div class="boxes">
+              <div class="box"><div class="img-box"><img src="images/کد-610.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 610</p> <span>20,300,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+              <div class="box"><div class="img-box"><img src="images/کد-615-2.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 615</p> <span>8,860,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+              <div class="box"><div class="img-box"><img src="images/کد-614.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 614</p> <span>30,620,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+              <div class="box"><div class="img-box"><img src="images/کد-602.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 602</p> <span>6,900,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+              <div class="box"><div class="img-box"><img src="images/کد-615-2.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 612</p> <span>99,360,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+              <div class="box"><div class="img-box"><img src="images/باکس-گل-کد-613.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 613</p> <span>24,790,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+              <div class="box"><div class="img-box"><img src="images/باکس-گل-کد-611.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 611</p> <span>27,400,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+              <div class="box"><div class="img-box"><img src="images/کد-604.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 604</p> <span>22,480,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+            </div>
+            <div class="next" onclick="plusIndex(this,+1)">
+              <i class="fa fa-angle-right" ></i>
+            </div>
+            <div class="bullets">
+              <span class="active"
+              onclick="currentSlide(this,0)"></span>
+              <span
+              onclick="currentSlide(this,1)"></span>
+            </div>
+          </div>
+        </section>
+        <!-- -------------------------main sec4 , second slider---------------------- -->
+        <section >
+          <div class="titr">
+            <button> مشاهده باکس گل‌ها<i class="fa fa-angle-right" aria-hidden="true"></i></button>
+            <h2>خرید باکس گل</h2>
+          </div>
+          <div class="contain-box">
+            <div class="prew" onclick="plusIndex(this,-1)">
+                    <i class="fa fa-angle-left" ></i></div>
+                    <div class="boxes">
+                      <div class="box"><div class="img-box"><img src="images/دسته-گل-کد-150-3.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 610</p> <span>20,300,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+                      <div class="box"><div class="img-box"><img src="images/bouqut-flower-yalda-117.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 615</p> <span>8,860,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+                      <div class="box"><div class="img-box"><img src="images/boqute-flower-code-116.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 614</p> <span>30,620,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+                      <div class="box"><div class="img-box"><img src="images/yalda-bouqute-120-webp.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 602</p> <span>6,900,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+                      <div class="box"><div class="img-box"><img src="images/FLOWER-YALDS-BOQUTE.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 612</p> <span>99,360,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+                      <div class="box"><div class="img-box"><img src="images/IMG_7136.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 613</p> <span>24,790,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+                      <div class="box"><div class="img-box"><img src="images/IMG_7131.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 611</p> <span>27,400,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+                      <div class="box"><div class="img-box"><img src="images/IMG_7129-copy.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 604</p> <span>22,480,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+                    </div>
+                    <div class="next" onclick="plusIndex(this,+1)">
+                      <i class="fa fa-angle-right" ></i></div>
+                      <div class="bullets">
+                        <span class="active"
+                        onclick="currentSlide(this,0)"></span>
+                        <span
+                        onclick="currentSlide(this,1)"></span>
+                      </div>
+                    </div>
+         </section>
+        <!-- -------------------------main sec5 , taj gol---------------------- -->
+        <section >
+                    <div class="titr">
+                      <button> مشاهده همه تاج گل‌های تبریک<i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                      <h2>خرید تاج گل تبریک</h2>
+                    </div>
+                    <div class="contain-box">
+                      <div class="boxes">
+                        <div class="box"><div class="img-box"><img src="images/flower-crown-code-861-2048x2048.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 610</p> <span>20,300,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+                        <div class="box"><div class="img-box"><img src="images/flower-crown-code-859.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 615</p> <span>8,860,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+                        <div class="box"><div class="img-box"><img src="images/flower-crown-code-860.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 614</p> <span>30,620,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+                        <div class="box"><div class="img-box"><img src="images/flower-crown-code-858.webp" alt=""></div> <div class="text-box"><p>باکس گل کد 602</p> <span>6,900,000 تومان</span> <button>افزودن به سبد خرید</button></div></div>
+                        
+                      </div>
+                    </div>
+        </section>
+        <!-- -------------------------main sec6 , acardeon---------------------- -->
+        <section class="sec6" dir="rtl">
+        <div class="p-class"> 
+           <p>سوالات متداول خرید گل آنلاین از گندم VIP</p>
+          </div>
+          <div class="questions">
+            <div class="right">
+              <div class="question ">
+                <p class="que" > <i class="fa fa-angle-down arrow"></i> ارسال گل ها به چه صورت است؟</p>
+                <span class="answer">ارسال تمامی گل ها توسط تیم حرفه ای حمل و نقل گندم vip ارسال می شود که بسته به نوع سفارش شامل انواع وسایل نقلیه می شود.</span>
+              </div>
+              <div class="question ">
+                <p class="que" > <i class="fa fa-angle-down arrow"></i> تمام گل های شما طبیعی هستند؟</p>
+                <span class="answer">بله، تمامی گل‌هایی که در باکس‌ها و دسته‌گل‌ها استفاده می‌شوند گل‌های طبیعی، تازه و باکیفیت بالا هستند. تیم گل‌آرایی ما هر روز گل‌های تازه را از گلخانه‌ها تهیه می‌کند تا در زمان تحویل، کاملاً شاداب و زیبا باشند.</span>
+              </div>
+              <div class="question ">
+                <p class="que" > <i class="fa fa-angle-down arrow"></i> هزینه ارسال گل و هدیه چقدر است؟</p>
+                <span class="answer">هزینه ارسال گل برای سفارش‌های بالای <b>۱,۵۰۰,۰۰۰ تومان</b> در مناطق تحت پوشش رایگان است. توجه داشته باشید که مناطق <b>چیتگر، بهشت زهرا، حکیمیه و دربند</b> شامل هزینه ارسال می‌شوند.</span>
+              </div>
+              <div class="question ">
+                <p class="que" > <i class="fa fa-angle-down arrow"></i> از کجا بفهمم که هدیه‌ام رسیده است؟</p>
+                <span class="answer">میتوانید از طریق واتس اپ با پشتیبانی در ارتباط باشید.</span>
+              </div>
+              <div class="question ">
+                <p class="que" > <i class="fa fa-angle-down arrow"></i> آیا امکان کنسل کردن سفارش وجود دارد؟</p>
+                <span class="answer">خیر ما عودت وجه نداریم فقط می‌توانید تعویض انجام دهید.</span>
+              </div>
+            </div>
+            <div class="left">
+              <div class="question ">
+                <p class="que" > <i class="fa fa-angle-down arrow"></i> آیا ارسال به شهرستان هم دارید؟</p>
+                <span class="answer">با توجه به حساسیت در تازگی گل ها فقط برای استان تهران و البرز ارسال خواهیم داشت.</span>
+              </div>
+              <div class="question ">
+                <p class="que" > <i class="fa fa-angle-down arrow"></i> اگر ادرس گیرنده را ندارم چیکار کنم؟</p>
+                <span class="answer">اگر آدرس دقیق گیرنده را نمی‌دانید، تیم پشتیبانی با حفظ سورپرایز شما از طریق تماس با گیرنده آدرس را دریافت می‌کند و سفارش را هماهنگ می‌فرستد.</span>
+              </div>
+              <div class="question ">
+                <p class="que" > <i class="fa fa-angle-down arrow"></i> مدت زمان ارسال سفارش چقدر است؟</p>
+                <span class="answer">مدت زمان ارسال سفارش برای شهر تهران 2 ساعت و حومه تهران کمتر از 3 ساعت می باشد.</span>
+              </div>
+              <div class="question ">
+                <p class="que" > <i class="fa fa-angle-down arrow"></i> چند روز قبل باید سفارش را ثبت کنم؟</p>
+                <span class="answer">در بیشتر محصولات، اگر تا قبل از ساعت ۱۷ سفارش خود را ثبت کنید، می‌توانید گزینه‌ی «تحویل امروز» را انتخاب کنید. سفارش‌های خارج از این بازه در اولین زمان کاری روز بعد ارسال خواهند شد. بهتر است برای اطمینان خاطر دو الی سه روز قبل ثبت سفارش را انجام دهید.</span>
+              </div>
+              <div class="question ">
+                <p class="que" > <i class="fa fa-angle-down arrow"></i> به چه مناطقی از تهران و کرج ارسال دارید؟</p>
+                <span class="answer">ارسال به تمامی مناطق تهران و کرج بدون محدودیت انجام می‌شود. سفارش‌ها توسط پیک اختصاصی و در سریع‌ترین زمان تحویل داده می‌شوند.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- -------------------------main sec7 , map---------------------- -->
+        <section class="map" dir="rtl">
+          <div class="p-class">
+            <p>ارسال فوری گل در تهران</p>
+          </div>
+          <div class="map-pic">
+            <img src="images/map-tehran-copy.webp" alt="">
+          </div>
+          <div class="btns">
+            <button onclick="goToSection('north')">خرید گل در شمال تهران</button>
+            <button onclick="goToSection('west')">خرید گل در غرب تهران</button>
+            <button onclick="goToSection('east')">خرید گل در شرق تهران</button>
+            <button onclick="goToSection('south')">خرید گل در جنوب تهران</button>
+          </div>
+        </section>
+        <!-- -------------------------main sec8 , directions---------------------- -->
+        <section class="sec8">
+          <ul class="tehran-dir" dir="rtl">
+            
+            <li class="directions" id="west">
+              <p>خرید گل در غرب تهران</p>
+              <span>اگر به دنبال <b>خرید گل در غرب تهران</b> هستید، گندم VIP در بیشتر محله‌های غرب با ارسال سریع ۹۰ تا ۱۲۰ دقیقه‌ای کنار شماست. از سعادت‌آباد، شهرک غرب، پونک، صادقیه و ستارخان تا گیشا، مرزداران و آیت‌الله کاشانی، می‌توانید تنها با چند کلیک انواع باکس گل لوکس، رز جاودان، دسته‌گل‌های مناسبتی و هدیه‌های عاشقانه را سفارش دهید. تمام سفارش‌ها با بسته‌بندی شیک، کارت پیام دلخواه و پشتیبانی لحظه‌ای آماده شده و در کمتر از دو ساعت به دست شما یا عزیزتان می‌رسد.</span>
+          </li>
+          <li class="directions" id="east">
+            <p>سفارش اینترنتی گل در شرق تهران</p>
+            <span>برای <b>سفارش اینترنتی گل در شرق تهران</b>، گندم VIP با پوشش کامل محله‌هایی مثل پیروزی، هروی، سهروردی، رسالت، نارمک، هفت‌حوض و تهرانپارس، گل‌های تازه و طراحی‌شده را با سرعت بالا به دست شما می‌رساند. چه بخواهید یک باکس گل عاشقانه، دسته‌گل تولد، هدیه اداری یا باکس‌های رسمی برای شرکت‌ها سفارش دهید، در تمام شرق تهران امکان انتخاب از مدل‌های متنوع، بسته‌بندی شیک، کارت پیام اختصاصی و ارسال فوری برایتان فراهم است تا هر مناسبت را به زیباترین شکل ممکن ثبت کنید</span>
+          </li>
+          <li class="directions" id="north">
+              <p>سفارش آنلاین گل در شمال تهران</p>
+              <span>برای <b>سفارش آنلاین گل در شمال تهران</b>، گندم VIP تجربه‌ای فراتر از یک گل‌فروشی معمولی ارائه می‌دهد؛ از تجریش و زعفرانیه تا ولنجک، قیطریه، نیاوران، پاسداران، ظفر و میرداماد، گل‌ها مستقیماً از گلخانه‌های برتر انتخاب شده و با طراحی لوکس و بسته‌بندی ویژه ارسال می‌شوند. چه بخواهید برای مناسبت‌های خاص، هدیه‌های تشریفاتی یا سورپرایزهای عاشقانه گل سفارش دهید، تیم ما با دقت حرفه‌ای، زمان‌بندی دقیق و ارسال سریع، سفارش شما را در هر نقطه از شمال تهران آماده و تحویل می‌دهد.</span>
+          </li>
+          <li class="directions" id="south">
+              <p>خرید انلاین گل در مرکز تا جنوب تهران</p>
+              <span>برای<b> خرید انلاین گل در مرکز</b> و جنوب تهران، گندم VIP با پوشش کامل محله‌هایی مثل یوسف‌آباد، هفت‌تیر، گاندی و ونک، گل‌هایی لوکس و طراحی‌شده را با همان کیفیت شمال شهر ارائه می‌کند. از دسته‌گل‌های رسمی برای محیط‌های اداری تا باکس‌های عاشقانه و هدیه‌های مناسبتی، تمام سفارش‌ها با بسته‌بندی شیک، پیک سریع و آماده‌سازی دقیق تحویل می‌شوند. چه در خیابان جهان‌آرا باشید، چه کریم‌خان یا ملاصدرا و شیخ‌بهایی، تنها با چند کلیک می‌توانید گل دلخواه‌تان را با زمان‌بندی دقیق و طراحی حرفه‌ای دریافت کنید.</span>
+            </li>
+          </ul>
+        </section>
+      </main>
+        <!-- -------------------------footer--------------------- -->
+      <footer >
+        <div class="top" >
+          <p>سرعت و تنوع <b>خرید گل </b>اینترنتی را با<b> گل فروشی آنلاین</b> تجربه کنید.</p>
+          <span>برای سفارش تلفنی می توانید با شماره <b>02188706024</b> و <b>09120044382</b> تماس بگیرید.</span>
+        </div>
+        <div class="midd" dir="rtl">
+          <div>
+            <p>تماس با ما</p>
+            <hr>
+            <span><b>آدرس:</b> تهران، آرژانتین، خیابان 35 وزرا</span>
+            <span><b>تلفن ثابت: </b><a href="">24 60 70 88 – 021</a></span>
+            <a href="">021-88708285</a>
+            <span><b>شماره همراه:</b><a href="">09120044382</a></span>
+          </div>
+          <div>
+            <p>صفحات پربازدید</p>
+            <hr>
+            <a href="">تاج گل ترحیم</a>
+            <a href="">تاج گل تبریک</a>
+            <a href="">گل یلدا</a>
+            <a href="">خرید گل اینترنتی</a>
+            <a href="">خرید تاج گل</a>
+            <a href="">ولنتاین</a>
+          </div>
+          <div>
+            <p>درباره ما</p>
+            <hr>
+            <span>یادتان باشد که روزهای مهم شما هستند که تقویم ما را می‌سازند! پس با خیال راحت سفارش گل خود را ثبت کنید و در بازه‌های تعیین شده (10 الی 19) در سراسر شهر تهران آن را دریافت کنید.</span>
+          </div>
+          <div>
+            <p>اینماد و پروانه کسب</p>
+            <hr>
+            <div class="img">
+              <img src="images/enamad2-copy.webp" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <p>تمامی حقوق برای وب سایت Gandomvip محفوظ می باشد.</p>
+          <p>هشدار: کلیه تصاویر به صورت اختصاصی عکاسی شده است استفاده به هر طریق جرم محسوب شده و توسط واحد حقوقی شرکت پیگیری میگردد.</p>
+          <p>Design and development: Advertising company</p>
+        </div>
+      </footer>
+      <div class="go-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"/>
+        </svg>
+      </div>
+      <div class="chat-box">
+  <div class="socials" id="socials">
+    <div><svg class="instagram" width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="color-element" cx="19.5" cy="19.5" r="19.5" fill="url(#linear-gradient)"></circle><path id="Path_1923" data-name="Path 1923" d="M13.177,0H5.022A5.028,5.028,0,0,0,0,5.022v8.155A5.028,5.028,0,0,0,5.022,18.2h8.155A5.028,5.028,0,0,0,18.2,13.177V5.022A5.028,5.028,0,0,0,13.177,0Zm3.408,13.177a3.412,3.412,0,0,1-3.408,3.408H5.022a3.411,3.411,0,0,1-3.408-3.408V5.022A3.412,3.412,0,0,1,5.022,1.615h8.155a3.412,3.412,0,0,1,3.408,3.408v8.155Z" transform="translate(10 10.4)" fill="#fff"></path><path id="Path_1924" data-name="Path 1924" d="M45.658,40.97a4.689,4.689,0,1,0,4.69,4.69A4.695,4.695,0,0,0,45.658,40.97Zm0,7.764a3.075,3.075,0,1,1,3.075-3.075A3.078,3.078,0,0,1,45.658,48.734Z" transform="translate(-26.558 -26.159)" fill="#fff"></path></svg></div>
+    <div><svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="color-element" cx="19.4395" cy="19.4395" r="19.4395" fill="#FF549C"></circle><path fill-rule="evenodd" clip-rule="evenodd" d="M2.60298 0H16.9194C18.351 0 19.5224 1.19321 19.5224 2.65158V14.5838C19.5224 16.0421 18.351 17.2354 16.9194 17.2354H7.4185L3.64418 20.4173C3.51402 20.5499 3.38388 20.5499 3.25372 20.5499H2.99344C2.73314 20.4173 2.60298 20.1521 2.60298 19.887V17.2354C1.17134 17.2354 0 16.0421 0 14.5838V2.65158C0 1.19321 1.17134 0 2.60298 0ZM2.60316 11.2696C2.60316 11.6673 2.86346 11.9325 3.25391 11.9325H4.5554C5.5966 11.9325 6.50764 11.0044 6.50764 9.94376C6.50764 8.88312 5.5966 7.95505 4.5554 7.95505C4.16496 7.95505 3.90465 7.68991 3.90465 7.29218C3.90465 6.89441 4.16496 6.62927 4.5554 6.62927H5.85689C6.24733 6.62927 6.50764 6.36411 6.50764 5.96637C6.50764 5.56863 6.24733 5.30347 5.85689 5.30347H4.5554C3.51421 5.30347 2.60316 6.23154 2.60316 7.29218C2.60316 8.35281 3.51421 9.28085 4.5554 9.28085C4.94585 9.28085 5.20613 9.54602 5.20613 9.94376C5.20613 10.3415 4.94585 10.6067 4.5554 10.6067H3.25391C2.86346 10.6067 2.60316 10.8718 2.60316 11.2696ZM14.9678 11.9325H13.6664C13.2759 11.9325 13.0156 11.6673 13.0156 11.2696C13.0156 10.8718 13.2759 10.6067 13.6664 10.6067H14.9678C15.3583 10.6067 15.6186 10.3415 15.6186 9.94376C15.6186 9.54602 15.3583 9.28085 14.9678 9.28085C13.9267 9.28085 13.0156 8.35281 13.0156 7.29218C13.0156 6.23154 13.9267 5.30347 14.9678 5.30347H16.2693C16.6598 5.30347 16.9201 5.56863 16.9201 5.96637C16.9201 6.36411 16.6598 6.62927 16.2693 6.62927H14.9678C14.5774 6.62927 14.3171 6.89441 14.3171 7.29218C14.3171 7.68991 14.5774 7.95505 14.9678 7.95505C16.009 7.95505 16.9201 8.88312 16.9201 9.94376C16.9201 11.0044 16.009 11.9325 14.9678 11.9325ZM10.4126 11.2697C10.4126 11.6674 10.6729 11.9326 11.0633 11.9326C11.4538 11.9326 11.7141 11.6674 11.8442 11.2697V5.96649C11.8442 5.70135 11.5839 5.43619 11.3236 5.30362C10.9332 5.30362 10.6729 5.43619 10.5427 5.70135L9.76186 7.15973L8.98094 5.70135C8.85081 5.43619 8.46034 5.17102 8.20006 5.30362C7.93977 5.43619 7.67946 5.70135 7.67946 5.96649V11.2697C7.67946 11.6674 7.93977 11.9326 8.33022 11.9326C8.72066 11.9326 8.98094 11.6674 8.98094 11.2697V8.75067L9.1111 8.88327C9.37138 9.28101 10.0221 9.28101 10.2825 8.88327L10.4126 8.75067V11.2697Z" transform="translate(9.67801 10.4601)" fill="white"></path></svg></div>
+    <div><svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="color-element" cx="19.4395" cy="19.4395" r="19.4395" fill="#49E670"></circle><path d="M12.9821 10.1115C12.7029 10.7767 11.5862 11.442 10.7486 11.575C10.1902 11.7081 9.35269 11.8411 6.84003 10.7767C3.48981 9.44628 1.39593 6.25317 1.25634 6.12012C1.11674 5.85403 2.13001e-06 4.39053 2.13001e-06 2.92702C2.13001e-06 1.46351 0.83755 0.665231 1.11673 0.399139C1.39592 0.133046 1.8147 1.01506e-06 2.23348 1.01506e-06C2.37307 1.01506e-06 2.51267 1.01506e-06 2.65226 1.01506e-06C2.93144 1.01506e-06 3.21063 -2.02219e-06 3.35022 0.532183C3.62941 1.19741 4.32736 2.66092 4.32736 2.79397C4.46696 2.92702 4.46696 3.19311 4.32736 3.32616C4.18777 3.59225 4.18777 3.59224 3.90858 3.85834C3.76899 3.99138 3.6294 4.12443 3.48981 4.39052C3.35022 4.52357 3.21063 4.78966 3.35022 5.05576C3.48981 5.32185 4.18777 6.38622 5.16491 7.18449C6.42125 8.24886 7.39839 8.51496 7.81717 8.78105C8.09636 8.91409 8.37554 8.9141 8.65472 8.648C8.93391 8.38191 9.21309 7.98277 9.49228 7.58363C9.77146 7.31754 10.0507 7.1845 10.3298 7.31754C10.609 7.45059 12.2841 8.11582 12.5633 8.38191C12.8425 8.51496 13.1217 8.648 13.1217 8.78105C13.1217 8.78105 13.1217 9.44628 12.9821 10.1115Z" transform="translate(12.9597 12.9597)" fill="#FAFAFA"></path><path d="M0.196998 23.295L0.131434 23.4862L0.323216 23.4223L5.52771 21.6875C7.4273 22.8471 9.47325 23.4274 11.6637 23.4274C18.134 23.4274 23.4274 18.134 23.4274 11.6637C23.4274 5.19344 18.134 -0.1 11.6637 -0.1C5.19344 -0.1 -0.1 5.19344 -0.1 11.6637C-0.1 13.9996 0.624492 16.3352 1.93021 18.2398L0.196998 23.295ZM5.87658 19.8847L5.84025 19.8665L5.80154 19.8788L2.78138 20.8398L3.73978 17.9646L3.75932 17.906L3.71562 17.8623L3.43104 17.5777C2.27704 15.8437 1.55796 13.8245 1.55796 11.6637C1.55796 6.03288 6.03288 1.55796 11.6637 1.55796C17.2945 1.55796 21.7695 6.03288 21.7695 11.6637C21.7695 17.2945 17.2945 21.7695 11.6637 21.7695C9.64222 21.7695 7.76778 21.1921 6.18227 20.039L6.17557 20.0342L6.16817 20.0305L5.87658 19.8847Z" transform="translate(7.7758 7.77582)" fill="white" stroke="white" stroke-width="0.2"></path></svg></div>
+    <div><svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="color-element" cx="19.4395" cy="19.4395" r="19.4395" fill="#03E78B"></circle><path d="M19.3929 14.9176C17.752 14.7684 16.2602 14.3209 14.7684 13.7242C14.0226 13.4259 13.1275 13.7242 12.8292 14.4701L11.7849 16.2602C8.65222 14.6193 6.11623 11.9341 4.47529 8.95057L6.41458 7.90634C7.16046 7.60799 7.45881 6.71293 7.16046 5.96705C6.56375 4.47529 6.11623 2.83435 5.96705 1.34259C5.96705 0.596704 5.22117 0 4.47529 0H0.745882C0.298353 0 5.69062e-07 0.298352 5.69062e-07 0.745881C5.69062e-07 3.72941 0.596704 6.71293 1.93929 9.3981C3.87858 13.575 7.30964 16.8569 11.3374 18.7962C14.0226 20.1388 17.0061 20.7355 19.9896 20.7355C20.4371 20.7355 20.7355 20.4371 20.7355 19.9896V16.4094C20.7355 15.5143 20.1388 14.9176 19.3929 14.9176Z" transform="translate(9.07179 9.07178)" fill="white"></path></svg></div>
+  </div>
+  <button class="chatBtn" id="chatBtn">
+    <div>
+      <svg class="massage " id="massage" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="-496.9 507.1 54 54" xml:space="preserve"><style type="text/css">.chaty-sts2-0{fill:#ffffff;}</style><g><circle cx="-469.9" cy="534.1" r="27" fill="#86CD91"></circle></g><path class="chaty-sts2-0" d="M-472.6,522.1h5.3c3,0,6,1.2,8.1,3.4c2.1,2.1,3.4,5.1,3.4,8.1c0,6-4.6,11-10.6,11.5v4.4c0,0.4-0.2,0.7-0.5,0.9   c-0.2,0-0.2,0-0.4,0c-0.2,0-0.5-0.2-0.7-0.4l-4.6-5c-3,0-6-1.2-8.1-3.4s-3.4-5.1-3.4-8.1C-484.1,527.2-478.9,522.1-472.6,522.1z   M-462.9,535.3c1.1,0,1.8-0.7,1.8-1.8c0-1.1-0.7-1.8-1.8-1.8c-1.1,0-1.8,0.7-1.8,1.8C-464.6,534.6-463.9,535.3-462.9,535.3z   M-469.9,535.3c1.1,0,1.8-0.7,1.8-1.8c0-1.1-0.7-1.8-1.8-1.8c-1.1,0-1.8,0.7-1.8,1.8C-471.7,534.6-471,535.3-469.9,535.3z   M-477,535.3c1.1,0,1.8-0.7,1.8-1.8c0-1.1-0.7-1.8-1.8-1.8c-1.1,0-1.8,0.7-1.8,1.8C-478.8,534.6-478.1,535.3-477,535.3z"></path>
+      </svg>
+    </div>
+    <div>
+      <svg class="close" id="closeChat" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="26" cy="26" rx="26" ry="26" fill="#86CD91"></ellipse><rect width="27.1433" height="3.89857" rx="1.94928" transform="translate(18.35 15.6599) scale(0.998038 1.00196) rotate(45)" fill="#ffffff"></rect><rect width="27.1433" height="3.89857" rx="1.94928" transform="translate(37.5056 18.422) scale(0.998038 1.00196) rotate(135)" fill="#ffffff"></rect>
+      </svg>
+    </div>
+  </button>
+      </div>
+    </div>
+
+    
+  <script src="js/script.js"></script>
+  </body>
+  </html>
+  
+  
+  
