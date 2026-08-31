@@ -8,10 +8,13 @@
   font-display: swap;
   font-family: "IRANSans";
   font-style: normal;
-  /* font-weight: 700; */
+  font-weight: 700;
   src:
     url(../font/IRANSansX-Bold.woff2) format("woff"),
     url(../font/IRANSansX-Bold.woff2) format("woff2");
+}
+*{
+  font-family: "IRANSans" , sans-serif;
 }
 :root {
   --nav-bg: #e2deeb;
