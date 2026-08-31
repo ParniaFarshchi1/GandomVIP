@@ -10,8 +10,8 @@
   font-style: normal;
   /* font-weight: 700; */
   src:
-    url(/font/IRANSansX-Bold.woff2) format("woff"),
-    url(/font/IRANSansX-Bold.woff2) format("woff2");
+    url(../font/IRANSansX-Bold.woff2) format("woff"),
+    url(../font/IRANSansX-Bold.woff2) format("woff2");
 }
 :root {
   --nav-bg: #e2deeb;
