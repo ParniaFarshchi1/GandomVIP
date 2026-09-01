@@ -840,7 +840,7 @@ margin:0px auto;
   width: 100%;
   height: 100%;
   background: rgba(128, 128, 128, 0.68);
-  z-index: 999 !important;
+  z-index: 99999 !important;
   position: fixed;
   top: 0;
   opacity: 0;
@@ -1340,7 +1340,7 @@ margin:0px auto;
 
   .chat-box {
     left: 15px;
-    bottom: 25px;
+    bottom: 55px;
   }
 
   .chat-box .chatBtn div #massage,

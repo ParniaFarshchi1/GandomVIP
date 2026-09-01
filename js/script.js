@@ -113,12 +113,22 @@ chatBtn.addEventListener("mouseenter", () => {
 
   console.log(closeChatBtn);
 });
-
 chatBtn.addEventListener("click", () => {
-  socials.classList.remove("showChat");
-  closeChatBtn.classList.remove("closer");
-  chatBtn.classList.remove("hidden");
+  socials.classList.add("showChat");
+  console.log(socials);
+
+  closeChatBtn.classList.add("closer");
+  chatBtn.classList.add("hidden");
+  // chatBtn.style.opacity="0"
+
+  console.log(closeChatBtn);
 });
+
+// chatBtn.addEventListener("click", () => {
+//   socials.classList.remove("showChat");
+//   closeChatBtn.classList.remove("closer");
+//   chatBtn.classList.remove("hidden");
+// });
 
 document.addEventListener("click", (e) => {
   if (!chatBtn.contains(e.target) && !socials.contains(e.target)) {
@@ -146,51 +156,37 @@ closeLogin.addEventListener("click", function closeLoginPopup() {
 // ///////////////////////////sign in//////////////////////////////////
 
 
-// function signin(){
-//     let signinPannel = document.getElementById("signin-user");
-//   // console.log(modal);
-//   signinPannel.classList.add("show");
-//   console.log(signinPannel)
-//   closesigninPopup();
-// }
-
-// let closesignin = document.getElementById("close-signin");
-// closesignin.addEventListener("click", function closesigninPopup() {
-//   let signinPannel = document.getElementById("signin-user");
-  
-
-//   signinPannel.classList.remove("show");
-// });
-
-function signin() {
-  let signinPannel = document.getElementById("signin-user");
+function signin(){
+    let signinPannel = document.getElementById("signin-user");
+  // console.log(modal);
   signinPannel.classList.add("show");
+  console.log(signinPannel)
+  closesigninPopup();
 }
 
 let closesignin = document.getElementById("close-signin");
-
-closesignin.addEventListener("click", function () {
+closesignin.addEventListener("click", function closesigninPopup() {
   let signinPannel = document.getElementById("signin-user");
+  
+
   signinPannel.classList.remove("show");
 });
+
+// function signin() {
+//   let signinPannel = document.getElementById("signin-user");
+//   signinPannel.classList.add("show");
+// }
+
+// let closesignin = document.getElementById("close-signin");
+
+// closesignin.addEventListener("click", function () {
+//   let signinPannel = document.getElementById("signin-user");
+//   signinPannel.classList.remove("show");
+// });
 // ///////////////////////////sign in next birth//////////////////////////////////
 
 
-// function nextBirth(){
-//     let nextBirthPannel = document.getElementById("next-sign-birthday");
-//   // console.log(modal);
-//   nextBirthPannel.classList.add("show");
 
-//   closeNextBirthPopup();
-// }
-
-// let closenextBirth = document.getElementById("close-next-birthday");
-// closenextBirth.addEventListener("click", function closeNextBirthPopup() {
-//   let nextBirthPannel = document.getElementById("next-sign-birthday");
-  
-
-//   nextBirthPannel.classList.remove("show");
-// });
 function nextBirth() {
   let nextBirthPannel = document.getElementById("next-sign-birthday");
   nextBirthPannel.classList.add("show");
@@ -205,21 +201,7 @@ closenextBirth.addEventListener("click", function () {
 // ///////////////////////////sign in next gender//////////////////////////////////
 
 
-// function nextgender(){
-//     let nextGenderPannel = document.getElementById("next-sign-gender");
-//   // console.log(modal);
-//   nextGenderPannel.classList.add("show");
 
-//   closeNextGenderPopup();
-// }
-
-// let closenextGender = document.getElementById("close-next-gender");
-// closenextGender.addEventListener("click", function closeNextGenderPopup() {
-//   let nextGenderPannel = document.getElementById("next-sign-gender");
-  
-
-//   nextGenderPannel.classList.remove("show");
-// });
 function nextgender() {
   let nextGenderPannel = document.getElementById("next-sign-gender");
   nextGenderPannel.classList.add("show");
@@ -234,21 +216,7 @@ closenextGender.addEventListener("click", function () {
 // ///////////////////////////sign in next email//////////////////////////////////
 
 
-// function nextemail(){
-//     let nextemailPannel = document.getElementById("next-sign-email");
-//   // console.log(modal);
-//   nextemailPannel.classList.add("show");
 
-//   closeNextemailPopup();
-// }
-
-// let closenextemail = document.getElementById("close-next-email");
-// closenextemail.addEventListener("click", function closeNextemailPopup() {
-//   let nextemailPannel = document.getElementById("next-sign-email");
-  
-
-//   nextemailPannel.classList.remove("show");
-// });
 
 function nextemail() {
   let nextemailPannel = document.getElementById("next-sign-email");
@@ -264,21 +232,7 @@ closenextemail.addEventListener("click", function () {
 // ///////////////////////////sign in next code//////////////////////////////////
 
 
-// function nextcode(){
-//     let nextcodePannel = document.getElementById("next-sign-code");
-//   // console.log(modal);
-//   nextcodePannel.classList.add("show");
 
-//   closeNextcodePopup();
-// }
-
-// let closenextcode = document.getElementById("close-next-code");
-// closenextcode.addEventListener("click", function closeNextcodePopup() {
-//   let nextcodePannel = document.getElementById("next-sign-code");
-  
-
-//   nextcodePannel.classList.remove("show");
-// });
 function nextcode() {
   let nextcodePannel = document.getElementById("next-sign-code");
   nextcodePannel.classList.add("show");
