@@ -103,16 +103,16 @@ let chatBtn = document.getElementById("massage");
 let socials = document.getElementById("socials");
 let closeChatBtn = document.getElementById("closeChat");
 
-chatBtn.addEventListener("mouseenter", () => {
-  socials.classList.add("showChat");
-  console.log(socials);
+// chatBtn.addEventListener("mouseenter", () => {
+//   socials.classList.add("showChat");
+//   console.log(socials);
 
-  closeChatBtn.classList.add("closer");
-  chatBtn.classList.add("hidden");
-  // chatBtn.style.opacity="0"
+//   closeChatBtn.classList.add("closer");
+//   chatBtn.classList.add("hidden");
+//   // chatBtn.style.opacity="0"
 
-  console.log(closeChatBtn);
-});
+//   console.log(closeChatBtn);
+// });
 chatBtn.addEventListener("click", () => {
   socials.classList.add("showChat");
   console.log(socials);
